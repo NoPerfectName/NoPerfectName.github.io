@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java�ڴ����
+title: Java内存机制
 categories: Java
 tags: Java
 author: NoPerfectName
@@ -9,115 +9,115 @@ author: NoPerfectName
 * content
 {:toc}
 
-��Java���ڴ���ƽ���̽��
+对Java的内存机制进行探讨
 
 
 
 
 
-## Java������ʱ�ڴ�
-#### �̹߳���
+## Java的运行时内存
+#### 线程共享
 
-- Java��
+- Java堆
 
-  ��Ŷ���ʵ������new�Ķ���
+  存放对象实例，即new的对象。
 
-  ?
+  
 
-- ������
+- 方法区
 
-  �洢�Ѿ�����������ص�����Ϣ����������̬������JIT�����Ĵ�������ݡ�
+  存储已经被虚拟机加载的类信息、常量、静态变量、JIT编译后的代码等数据。
 
-  ?
+  
 
-- ����ʱ������
+- 运行时常量池
 
-  ��������һ���֡����ڴ�ű��������ɵĸ����������ͷ������á�
+  方法区的一部分。用于存放编译期生成的各种字面量和符号引用。
 
-  ?
+  
 
-- ֱ���ڴ�
+- 直接内存
 
-  NIO��Native����ֱ�ӷ���Ķ����ڴ档DirectBuffer����Ҳ��ʹ�ô˲����ڴ档
+  NIO、Native函数直接分配的堆外内存。DirectBuffer引用也会使用此部分内存。
 
-  ?
+  
 
-#### �߳�˽��
+#### 线程私有
 
-- ���������
+- 程序计数器
 
-  ��ǰ�߳���ִ�е��ֽ�����к�ָʾ��
+  当前线程所执行的字节码的行号指示器
 
-  ?
+  
 
-- Java�����ջ
+- Java虚拟机栈
 
-  Java����ִ�е��ڴ�ģ�ͣ�ÿ��������ִ��ʱ���ᴴ��һ��ջ֡���洢�ֲ�������������ջ����̬���ӡ��������ڵ���Ϣ��
+  Java方法执行的内存模型，每个方法被执行时都会创建一个栈帧，存储局部变量表、操作栈、动态链接、方法出口等信息。
 
-  1��ÿ���̶߳����Լ�������ջ�ռ�
+  1）每个线程都有自己独立的栈空间
 
-  2���߳�ջֻ��������ͺͶ����ַ
+  2）线程栈只存基本类型和对象地址
 
-  3�������оֲ��������߳̿ռ���
+  3）方法中局部变量在线程空间中
 
-  ?
+  
 
-- ���ط���ջ
+- 本地方法栈
 
-  Native����������HotSpot������к�Java�����ջ�϶�Ϊһ��
+  Native方法服务。在HotSpot虚拟机中和Java虚拟机栈合二为一。
 
-  ?
+  
 
-## GC�㷨
+## GC算法
 
-* �����-�������Mark-Sweep���㷨����Ϊ����ǡ��͡�����������׶Σ����ȱ�ǳ�������Ҫ���յĶ����ڱ����ɺ�ͳһ���յ����б���ǵĶ���
+* “标记-清除”（Mark-Sweep）算法，分为“标记”和“清除”两个阶段：首先标记出所有需要回收的对象，在标记完成后统一回收掉所有被标记的对象。
 
-![img](../images/Java�ڴ�/0.jpg)
+![img](../images/Java内存/0.jpg)
 
-   **������Ҫȱ���ǣ�**
+   **它的主要缺点是：**
 
-  1��Ч�����⣬��Ǻ�������̵�Ч�ʶ����ߣ�
+  1）效率问题，标记和清除过程的效率都不高；
 
-   2���ռ����⣬������֮�������������������ڴ���Ƭ���ռ���Ƭ̫����ܻᵼ�£����������Ժ�����й�������Ҫ����ϴ����ʱ�޷��ҵ��㹻�������ڴ�����ò���ǰ������һ�������ռ�������
-
-
-
-* �����ơ���Copying���㷨�����������ڴ水��������Ϊ��С��ȵ����飬ÿ��ֻʹ�����е�һ�顣����һ����ڴ������ˣ��ͽ�������ŵĶ����Ƶ�����һ�����棬Ȼ���ٰ���ʹ�ù����ڴ�ռ�һ��������������ʹ��ÿ�ζ��Ƕ����е�һ������ڴ���գ��ڴ����ʱҲ�Ͳ��ÿ����ڴ���Ƭ�ȸ��������ֻҪ�ƶ��Ѷ�ָ�룬��˳������ڴ漴�ɣ�ʵ�ּ򵥣����и�Ч��
-
-![img](../images/Java�ڴ�/1.jpg)
-
-**������Ҫȱ���ǣ�**
-
-
-1��ֻ�������㷨�ǽ��ڴ���СΪԭ����һ�룬�е�����˷ѣ�
-
-2���������ʽϸ�ʱ��Ҫִ�н϶�ĸ��Ʋ�����Ч�ʽ����ͣ�
+   2）空间问题，标记清除之后会产生大量不连续的内存碎片，空间碎片太多可能会导致，当程序在以后的运行过程中需要分配较大对象时无法找到足够的连续内存而不得不提前触发另一次垃圾收集动作；
 
 
 
-* �����-��������Mark-Compact���㷨����ǹ�����Ȼ�롰���-������㷨һ�������������費��ֱ�ӶԿɻ��ն���������������������д��Ķ�����һ���ƶ���Ȼ��ֱ���������˱߽�������ڴ棬�������������ڴ�ռ�ͱȽ϶��ˡ�
+* “复制”（Copying）算法，它将可用内存按容量划分为大小相等的两块，每次只使用其中的一块。当这一块的内存用完了，就将还存活着的对象复制到另外一块上面，然后再把已使用过的内存空间一次清理掉。这样使得每次都是对其中的一块进行内存回收，内存分配时也就不用考虑内存碎片等复杂情况，只要移动堆顶指针，按顺序分配内存即可，实现简单，运行高效。
 
-![img](../images/Java�ڴ�/2.jpg)
+![img](../images/Java内存/1.jpg)
+
+**它的主要缺点是：**
+
+
+1）只是这种算法是将内存缩小为原来的一半，有点过于浪费；
+
+2）对象存活率较高时就要执行较多的复制操作，效率将会变低；
 
 
 
-* ���漸���㷨��ͨ���ִ�����(generational collection)�����һ��ģ�һ���ǰ�Java�ѷ�Ϊ<font color='#dd0000'>Young Generation����������</font>�� <font color='#dd0000'> Old Generation���������</font> ��<font color='#dd0000'>Permanent Generation���־ô���</font>�������Ϳ��Ը��ݸ���������ص�������ʵ��Ļ����㷨��
+* “标记-整理”（Mark-Compact）算法，标记过程仍然与“标记-清除”算法一样，但后续步骤不是直接对可回收对象进行清理，而是让所有存活的对象都向一端移动，然后直接清理掉端边界以外的内存，这样话连续的内存空间就比较多了。
 
-![img](../images/Java�ڴ�/3.jpg)
+![img](../images/Java内存/2.jpg)
 
-1�� ��Young Generation�У���һ����Eden Space�Ŀռ䣬��Ҫ��������������Ķ��󣬻�������Survivor Spaces��from��to�������ǵĴ�С����һ���������������ÿ���������պ��������Ķ���
 
-2�� ��Young Generation���У���������һ����Copying���㷨���ٶȿ졣ÿ��GC��ʱ�򣬴�������Ķ���������Eden������ĳ��SurvivorSpace����Survivor Space�ռ����˺�ʣ�µ�live����ͱ�ֱ�ӿ�����OldGeneration��ȥ����ˣ�ÿ��GC��Eden�ڴ��ᱻ��ա�
 
-3�� ��Old Generation������Ҫ���Ӧ�ó������������ڳ����ڴ������������һ����mark-compact���㷨���ٶ���Щ���������ڴ�Ҫ��
+* 上面几种算法是通过分代回收(generational collection)混合在一起的，一般是把Java堆分为<font color='#dd0000'>Young Generation（新生代）</font>， <font color='#dd0000'> Old Generation（老年代）</font> 和<font color='#dd0000'>Permanent Generation（持久代）</font>，这样就可以根据各个年代的特点采用最适当的回收算法。
 
-4����Permanent Generation�У���Ҫ������JVM�Լ��ķ�����󣬱��������ͷ�������ȡ�
+![img](../images/Java内存/3.jpg)
 
-5�� �������շֶ༶��0��Ϊȫ��(Full)���������գ������Old���е�������1��������Ϊ�����������գ�ֻ�����Young�е��������ڴ����ͨ��������Old�λ�Perm���������պ���Ȼ���ڴ�ռ������µ�Java����������
+1） 在Young Generation中，有一个叫Eden Space的空间，主要是用来存放新生的对象，还有两个Survivor Spaces（from、to），它们的大小总是一样，它们用来存放每次垃圾回收后存活下来的对象。
 
-**˵����**
+2） 在Young Generation块中，垃圾回收一般用Copying的算法，速度快。每次GC的时候，存活下来的对象首先由Eden拷贝到某个SurvivorSpace，当Survivor Space空间满了后，剩下的live对象就被直接拷贝到OldGeneration中去。因此，每次GC后，Eden内存块会被清空。
 
-from, to: �����������С��ȣ��൱��copying�㷨�е��������򣬵��½������޷�����eden��ʱ��������minor collection��JVM����copying�㷨����eden����from���Ŀɵ�������Ƶ�to��������һ���������գ�eden����from����գ�to��������ܵĴ���Ŵ��������from����Ϊ�µ�to���� to����Ϊ�µ�from�����������minor collection��ʱ�򣬷���to���Ų��£��򽫲��ֶ�����������������һ���棬��ʹto��û������JVM��Ȼ���ƶ������㹻��Զ�Ķ��󵽳�����������������������������޷������µĶ�����ô������major collection��Full���գ���
+3） 在Old Generation块中主要存放应用程序中生命周期长的内存对象，垃圾回收一般用mark-compact的算法，速度慢些，但减少内存要求。
+
+4）在Permanent Generation中，主要用来放JVM自己的反射对象，比如类对象和方法对象等。
+
+5） 垃圾回收分多级，0级为全部(Full)的垃圾回收，会回收Old段中的垃圾；1级或以上为部分垃圾回收，只会回收Young中的垃圾，内存溢出通常发生于Old段或Perm段垃圾回收后，仍然无内存空间容纳新的Java对象的情况。
+
+**说明：**
+
+from, to: 这两个区域大小相等，相当于copying算法中的两个区域，当新建对象无法放入eden区时，将出发minor collection。JVM采用copying算法，将eden区与from区的可到达对象复制到to区。经过一次垃圾回收，eden区和from区清空，to区中则紧密的存放着存活对象。随后from区成为新的to区， to区成为新的from区。如果进行minor collection的时候，发现to区放不下，则将部分对象放入成熟世代。另一方面，即使to区没有满，JVM依然会移动世代足够久远的对象到成熟世代。如果成熟世代放满对象，无法移入新的对象，那么将触发major collection（Full回收）。
 
 
 
