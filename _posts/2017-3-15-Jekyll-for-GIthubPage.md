@@ -9,6 +9,11 @@ author: NoPerfectName
 * content
 {:toc}
 
+利用Jekyll和Github pages搭建个人博客
+
+
+
+
 以下内容针对的是在Ubuntu环境下的配置。
 <br/>
 ## 事前准备
@@ -29,6 +34,7 @@ author: NoPerfectName
 * 安装Jekyll
 > gem install jekyll
 
+具体可参见官网[Jekyll官网](http://jekyll.com.cn/docs/installation/)
 <br/>
 ## 创建博客
 * 创建本地仓库，并从远程拷贝
