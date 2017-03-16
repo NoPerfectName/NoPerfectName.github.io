@@ -4,44 +4,36 @@ title: Java内存机制
 categories: Java
 tags: Java
 author: NoPerfectName
+excerpt: 对Java的内存机制进行探讨
 ---
 
 * content
 {:toc}
 
-对Java的内存机制进行探讨
-
-
 
 
 
 ## Java的运行时内存
-![Image_text](https://github.com/NoPerfectName/NoPerfectName.github.io/blob/master/images/java%E5%86%85%E5%AD%98/4.jpg)
+![Image_text]({{site.url}}/assets/4.jpg)
 #### 线程共享
 
 - Java堆
 
   存放对象实例，即new的对象。
 
-  
-
 - 方法区
 
   存储已经被虚拟机加载的类信息、常量、静态变量、JIT编译后的代码等数据。
-
-  
 
 - 运行时常量池
 
   方法区的一部分。用于存放编译期生成的各种字面量和符号引用。
 
-  
-
 - 直接内存
 
   NIO、Native函数直接分配的堆外内存。DirectBuffer引用也会使用此部分内存。
 
-  
+  <br/>
 
 #### 线程私有
 
@@ -68,12 +60,12 @@ author: NoPerfectName
   Native方法服务。在HotSpot虚拟机中和Java虚拟机栈合二为一。
 
   
-
+<br/>
 ## GC算法
 
 * “标记-清除”（Mark-Sweep）算法，分为“标记”和“清除”两个阶段：首先标记出所有需要回收的对象，在标记完成后统一回收掉所有被标记的对象。
 
-![Image_text](https://github.com/NoPerfectName/NoPerfectName.github.io/blob/master/images/java%E5%86%85%E5%AD%98/0.jpg?row=true)
+![Image_text]({{site.url}}/assets/0.jpg)
 
       它的主要缺点是：
 
@@ -85,7 +77,7 @@ author: NoPerfectName
 
 * “复制”（Copying）算法，它将可用内存按容量划分为大小相等的两块，每次只使用其中的一块。当这一块的内存用完了，就将还存活着的对象复制到另外一块上面，然后再把已使用过的内存空间一次清理掉。这样使得每次都是对其中的一块进行内存回收，内存分配时也就不用考虑内存碎片等复杂情况，只要移动堆顶指针，按顺序分配内存即可，实现简单，运行高效。
 
-![Image_text](/images/Java/1.jpg)
+![Image_text]({{site.url}}/assets/1.jpg)
 
     它的主要缺点是：
     1）只是这种算法是将内存缩小为原来的一半，有点过于浪费；
@@ -95,23 +87,23 @@ author: NoPerfectName
 
 * “标记-整理”（Mark-Compact）算法，标记过程仍然与“标记-清除”算法一样，但后续步骤不是直接对可回收对象进行清理，而是让所有存活的对象都向一端移动，然后直接清理掉端边界以外的内存，这样话连续的内存空间就比较多了。
 
-![Image_text](https://github.com/NoPerfectName/NoPerfectName.github.io/blob/master/images/java%E5%86%85%E5%AD%98/2.jpg)
+![Image_text]({{site.url}}/assets/2.jpg)
 
 <br/>
 
 * 上面几种算法是通过分代回收(generational collection)混合在一起的，一般是把Java堆分为<font color='#dd0000'>Young Generation（新生代）</font>， <font color='#dd0000'> Old Generation（老年代）</font> 和<font color='#dd0000'>Permanent Generation（持久代）</font>，这样就可以根据各个年代的特点采用最适当的回收算法。
 
-![Image_text](https://github.com/NoPerfectName/NoPerfectName.github.io/blob/master/images/java%E5%86%85%E5%AD%98/3.jpg)
+![Image_text]({{site.url}}/assets/3.jpg)
 
-1） 在Young Generation中，有一个叫Eden Space的空间，主要是用来存放新生的对象，还有两个Survivor Spaces（from、to），它们的大小总是一样，它们用来存放每次垃圾回收后存活下来的对象。
+    1） 在Young Generation中，有一个叫Eden Space的空间，主要是用来存放新生的对象，还有两个Survivor Spaces（from、to），它们的大小总是一样，它们用来存放每次垃圾回收后存活下来的对象。
 
-2） 在Young Generation块中，垃圾回收一般用Copying的算法，速度快。每次GC的时候，存活下来的对象首先由Eden拷贝到某个SurvivorSpace，当Survivor Space空间满了后，剩下的live对象就被直接拷贝到OldGeneration中去。因此，每次GC后，Eden内存块会被清空。
+    2） 在Young Generation块中，垃圾回收一般用Copying的算法，速度快。每次GC的时候，存活下来的对象首先由Eden拷贝到某个SurvivorSpace，当Survivor Space空间满了后，剩下的live对象就被直接拷贝到OldGeneration中去。因此，每次GC后，Eden内存块会被清空。
 
-3） 在Old Generation块中主要存放应用程序中生命周期长的内存对象，垃圾回收一般用mark-compact的算法，速度慢些，但减少内存要求。
+    3） 在Old Generation块中主要存放应用程序中生命周期长的内存对象，垃圾回收一般用mark-compact的算法，速度慢些，但减少内存要求。
 
-4）在Permanent Generation中，主要用来放JVM自己的反射对象，比如类对象和方法对象等。
+    4）在Permanent Generation中，主要用来放JVM自己的反射对象，比如类对象和方法对象等。
 
-5） 垃圾回收分多级，0级为全部(Full)的垃圾回收，会回收Old段中的垃圾；1级或以上为部分垃圾回收，只会回收Young中的垃圾，内存溢出通常发生于Old段或Perm段垃圾回收后，仍然无内存空间容纳新的Java对象的情况。
+    5） 垃圾回收分多级，0级为全部(Full)的垃圾回收，会回收Old段中的垃圾；1级或以上为部分垃圾回收，只会回收Young中的垃圾，内存溢出通常发生于Old段或Perm段垃圾回收后，仍然无内存空间容纳新的Java对象的情况。
 
 **说明：**
 
