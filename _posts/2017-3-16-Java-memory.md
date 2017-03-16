@@ -16,6 +16,7 @@ author: NoPerfectName
 
 
 ## Java的运行时内存
+![Image_text](https://github.com/NoPerfectName/NoPerfectName.github.io/blob/master/images/java%E5%86%85%E5%AD%98/4.jpg)
 #### 线程共享
 
 - Java堆
