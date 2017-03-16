@@ -81,16 +81,15 @@ author: NoPerfectName
 
     2）空间问题，标记清除之后会产生大量不连续的内存碎片，空间碎片太多可能会导致，当程序在以后的运行过程中需要分配较大对象时无法找到足够的连续内存而不得不提前触发另一次垃圾收集动作；
 
-
+<br/>
 
 * “复制”（Copying）算法，它将可用内存按容量划分为大小相等的两块，每次只使用其中的一块。当这一块的内存用完了，就将还存活着的对象复制到另外一块上面，然后再把已使用过的内存空间一次清理掉。这样使得每次都是对其中的一块进行内存回收，内存分配时也就不用考虑内存碎片等复杂情况，只要移动堆顶指针，按顺序分配内存即可，实现简单，运行高效。
 
 ![Image_text](https://github.com/NoPerfectName/NoPerfectName.github.io/blob/master/images/java%E5%86%85%E5%AD%98/1.jpg)
 
-   **它的主要缺点是：**
-   1）只是这种算法是将内存缩小为原来的一半，有点过于浪费；
-
-   2）对象存活率较高时就要执行较多的复制操作，效率将会变低；
+    **它的主要缺点是：**
+    1）只是这种算法是将内存缩小为原来的一半，有点过于浪费；
+    2）对象存活率较高时就要执行较多的复制操作，效率将会变低；
 
 <br/>
 
@@ -98,7 +97,7 @@ author: NoPerfectName
 
 ![Image_text](https://github.com/NoPerfectName/NoPerfectName.github.io/blob/master/images/java%E5%86%85%E5%AD%98/2.jpg)
 
-
+<br/>
 
 * 上面几种算法是通过分代回收(generational collection)混合在一起的，一般是把Java堆分为<font color='#dd0000'>Young Generation（新生代）</font>， <font color='#dd0000'> Old Generation（老年代）</font> 和<font color='#dd0000'>Permanent Generation（持久代）</font>，这样就可以根据各个年代的特点采用最适当的回收算法。
 
