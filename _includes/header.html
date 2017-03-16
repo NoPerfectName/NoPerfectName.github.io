@@ -17,6 +17,7 @@
 
                 {% for my_page in site.pages %}
                     {% if my_page.type == 'page' %}
+					<!--page.url表示当前页面的url,如果相同,则显示高亮-->
                     <li>
                         {% if my_page.url == page.url %}
                         <a class="active" href="{{ my_page.url | prepend: site.baseurl }}">
