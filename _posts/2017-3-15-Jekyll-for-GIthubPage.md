@@ -11,16 +11,16 @@ author: NoPerfectName
 
 以下内容针对的是在Ubuntu环境下的配置。
 <br/>
-##事前准备
+## 事前准备
 
-####Gituhb的准备
+#### Gituhb的准备
 * 一个Github账户
 * 一个与用户名同名的仓库，并将其设置为站点。
 * Git的本地配置
 
 具体可参见官网[Github Pages](https://pages.github.com/)
 
-####Jekyll的准备
+#### Jekyll的准备
 * 安装Ruby
 > $ sudo apt-get install ruby-full
 * 安装RubyGems
@@ -30,7 +30,7 @@ author: NoPerfectName
 > gem install jekyll
 
 <br/>
-##创建博客
+## 创建博客
 * 创建本地仓库，并从远程拷贝
 > git clone* 'github地址'*
 * [Jekyll theme](http://jekyllthemes.org)下载喜欢的主题
