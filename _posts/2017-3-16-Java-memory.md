@@ -72,7 +72,7 @@ author: NoPerfectName
 
 * “标记-清除”（Mark-Sweep）算法，分为“标记”和“清除”两个阶段：首先标记出所有需要回收的对象，在标记完成后统一回收掉所有被标记的对象。
 
-![img](/images/Java内存/0.jpg?row=true)
+![Image_text](/images/Java内存/0.jpg?row=true)
 
    **它的主要缺点是：**
 
@@ -84,7 +84,7 @@ author: NoPerfectName
 
 * “复制”（Copying）算法，它将可用内存按容量划分为大小相等的两块，每次只使用其中的一块。当这一块的内存用完了，就将还存活着的对象复制到另外一块上面，然后再把已使用过的内存空间一次清理掉。这样使得每次都是对其中的一块进行内存回收，内存分配时也就不用考虑内存碎片等复杂情况，只要移动堆顶指针，按顺序分配内存即可，实现简单，运行高效。
 
-![img](/images/Java内存/1.jpg?row=true)
+![Image_text](/images/Java内存/1.jpg?row=true)
 
 **它的主要缺点是：**
 
@@ -97,13 +97,13 @@ author: NoPerfectName
 
 * “标记-整理”（Mark-Compact）算法，标记过程仍然与“标记-清除”算法一样，但后续步骤不是直接对可回收对象进行清理，而是让所有存活的对象都向一端移动，然后直接清理掉端边界以外的内存，这样话连续的内存空间就比较多了。
 
-![img](/images/Java内存/2.jpg?row=true)
+!Image_text](/images/Java内存/2.jpg?row=true)
 
 
 
 * 上面几种算法是通过分代回收(generational collection)混合在一起的，一般是把Java堆分为<font color='#dd0000'>Young Generation（新生代）</font>， <font color='#dd0000'> Old Generation（老年代）</font> 和<font color='#dd0000'>Permanent Generation（持久代）</font>，这样就可以根据各个年代的特点采用最适当的回收算法。
 
-![img](/images/Java内存/3.jpg?row=true)
+![Image_text](/images/Java内存/3.jpg?row=true)
 
 1） 在Young Generation中，有一个叫Eden Space的空间，主要是用来存放新生的对象，还有两个Survivor Spaces（from、to），它们的大小总是一样，它们用来存放每次垃圾回收后存活下来的对象。
 
