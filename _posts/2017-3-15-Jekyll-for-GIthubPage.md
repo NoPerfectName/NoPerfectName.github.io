@@ -18,7 +18,7 @@ author: NoPerfectName
 <br/>
 ## 事前准备
 
-#### Gituhb的准备
+#### Github的准备
 * 一个Github账户
 * 一个与用户名同名的仓库，并将其设置为站点。
 * Git的本地配置
