@@ -38,7 +38,7 @@ author: NoPerfectName
 <br/>
 ## 创建博客
 * 创建本地仓库，并从远程拷贝
-> git clone* 'github地址'*
+> git clone *'github地址'*
 * [Jekyll theme](http://jekyllthemes.org)下载喜欢的主题
 * 根据主题的安装提示安装
 * 预览效果
