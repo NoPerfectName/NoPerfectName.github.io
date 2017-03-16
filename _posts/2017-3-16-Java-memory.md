@@ -75,7 +75,7 @@ author: NoPerfectName
 
 ![Image_text](https://github.com/NoPerfectName/NoPerfectName.github.io/blob/master/images/java%E5%86%85%E5%AD%98/0.jpg?row=true)
 
-      **它的主要缺点是：**
+      它的主要缺点是：
 
     1）效率问题，标记和清除过程的效率都不高；
 
@@ -85,9 +85,9 @@ author: NoPerfectName
 
 * “复制”（Copying）算法，它将可用内存按容量划分为大小相等的两块，每次只使用其中的一块。当这一块的内存用完了，就将还存活着的对象复制到另外一块上面，然后再把已使用过的内存空间一次清理掉。这样使得每次都是对其中的一块进行内存回收，内存分配时也就不用考虑内存碎片等复杂情况，只要移动堆顶指针，按顺序分配内存即可，实现简单，运行高效。
 
-![Image_text](https://github.com/NoPerfectName/NoPerfectName.github.io/blob/master/images/java%E5%86%85%E5%AD%98/1.jpg)
+![Image_text](/images/Java/1.jpg)
 
-    **它的主要缺点是：**
+    它的主要缺点是：
     1）只是这种算法是将内存缩小为原来的一半，有点过于浪费；
     2）对象存活率较高时就要执行较多的复制操作，效率将会变低；
 
