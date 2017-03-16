@@ -72,7 +72,7 @@ author: NoPerfectName
 
 * “标记-清除”（Mark-Sweep）算法，分为“标记”和“清除”两个阶段：首先标记出所有需要回收的对象，在标记完成后统一回收掉所有被标记的对象。
 
-![Image_text](/images/Java内存/0.jpg?row=true)
+![Image_text](https://github.com/NoPerfectName/NoPerfectName.github.io/blob/master/images/java%E5%86%85%E5%AD%98/0.jpg?row=true)
 
    **它的主要缺点是：**
 
