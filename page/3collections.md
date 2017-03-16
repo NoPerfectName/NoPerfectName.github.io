@@ -9,7 +9,7 @@ type: page
 * content
 {:toc}
 
-## 工具
+## 数据结构
 
 * [图的邻接表](http://wiki.jikexueyuan.com/project/easy-learn-algorithm/clever-adjacency-list.html)
 
