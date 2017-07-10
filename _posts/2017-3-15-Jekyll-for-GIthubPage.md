@@ -45,4 +45,7 @@ author: NoPerfectName
 > jekyll s
 
 * 上传到Github
-> git push origin master
+> git status     //查看状态
+> git add .      //将修改的文件从工作区添加到暂存区
+> git commit -m "备注"      //把暂存区的内容提交到分支
+> git push origin master     //上传到github上
