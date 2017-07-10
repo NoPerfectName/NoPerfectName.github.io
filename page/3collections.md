@@ -33,4 +33,6 @@ type: page
 * [牛顿迭代法](http://www.matrix67.com/blog/archives/361)
 
 
+## 机器学习
 
+* [机器学习算法分类](http://blog.jobbole.com/77620/)
