@@ -16,6 +16,7 @@ import java.util.Scanner;
 
 /**
  * 大正整数相加
+ * 问题来源: http://acm.hdu.edu.cn/showproblem.php?pid=1002
  */
 
 public class AddBigInteger {
