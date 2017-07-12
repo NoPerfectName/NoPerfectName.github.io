@@ -36,3 +36,9 @@ type: page
 ## 机器学习
 
 * [机器学习算法分类](http://blog.jobbole.com/77620/)
+* [A Tour of Machine Learning Algorithms](http://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/)
+
+
+## Python
+
+* [Python多继承初始化](http://www.jackyshen.com/2015/08/19/multi-inheritance-with-super-in-Python/)
