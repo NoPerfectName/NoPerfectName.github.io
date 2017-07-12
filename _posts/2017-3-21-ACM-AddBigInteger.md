@@ -18,7 +18,7 @@ import java.util.Scanner;
  * 大正整数相加
  */
 
-public class AddBigNumber {
+public class AddBigInteger {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int loop = 0;
