@@ -49,3 +49,11 @@ author: NoPerfectName
 > git add .      //将修改的文件从工作区添加到暂存区  
 > git commit -m "备注"      //把暂存区的内容提交到分支  
 > git push origin master     //上传到github上  
+
+
+如果在文档中要插入数学公式，需要在markdowm文件中插入  
+```javascript
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+```
