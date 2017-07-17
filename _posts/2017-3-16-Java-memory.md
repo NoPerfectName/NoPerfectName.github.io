@@ -2,7 +2,7 @@
 layout: post
 title: Java内存机制
 categories: Java
-tags: Java
+tags: JVM
 author: NoPerfectName
 excerpt: 对Java的内存机制进行探讨
 ---

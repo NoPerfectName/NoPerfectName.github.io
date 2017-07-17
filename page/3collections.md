@@ -26,11 +26,16 @@ type: page
 * [Java 7中的Try-with-resources](http://ifeve.com/java-7%E4%B8%AD%E7%9A%84try-with-resources/)
 
     
+## 设计模式
+* [设计模式Java版](https://gof.quanke.name/)
 
 
 ## 数学
 
 * [牛顿迭代法](http://www.matrix67.com/blog/archives/361)
+* [理解矩阵一](http://blog.csdn.net/myan/article/details/647511)
+* [理解矩阵二](http://blog.csdn.net/myan/article/details/649018)
+* [理解矩阵三](http://blog.csdn.net/myan/article/details/1865397)
 
 
 ## 机器学习

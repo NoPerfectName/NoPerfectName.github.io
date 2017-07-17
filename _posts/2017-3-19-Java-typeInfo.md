@@ -2,7 +2,7 @@
 layout: post
 title: 类型信息
 categories: Java
-tags: Java
+tags: JVM
 author: NoPerfectName
 excerpt: 运行时类型信息使得你可以在程序运行时发现和使用类型信息。
 ---
@@ -49,11 +49,11 @@ class A extends B{
 	
 }
 
-class Test {
+public class Test {
 	public static void main(String[] args) {
 		//new A();
 		 try {
-           		 Class.forName("org.netty.test.A");
+           		 Class.forName("A");
         	}catch (ClassNotFoundException e) {
            		 e.printStackTrace();
         	}
