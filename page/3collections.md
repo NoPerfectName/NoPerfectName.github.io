@@ -24,7 +24,7 @@ type: page
 ## Java基础
 
 * [Java 7中的Try-with-resources](http://ifeve.com/java-7%E4%B8%AD%E7%9A%84try-with-resources/)
-
+* [Java类加载（详细）](http://www.importnew.com/23742.html)
     
 ## 设计模式
 * [设计模式Java版](https://gof.quanke.name/)
@@ -36,12 +36,14 @@ type: page
 * [理解矩阵一](http://blog.csdn.net/myan/article/details/647511)
 * [理解矩阵二](http://blog.csdn.net/myan/article/details/649018)
 * [理解矩阵三](http://blog.csdn.net/myan/article/details/1865397)
+* [LaTex公式简介](http://mlworks.cn/posts/introduction-to-mathjax-and-latex-expression/)
 
 
 ## 机器学习
 
 * [机器学习算法分类](http://blog.jobbole.com/77620/)
 * [A Tour of Machine Learning Algorithms](http://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/)
+* [线性代数介绍](http://www.hahack.com/wiki/math-linear-algebra.html)
 
 
 ## Python
