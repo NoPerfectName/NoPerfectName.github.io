@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 解决算法问题的通用步骤
-categories: algotithm
+categories: algorithm
 tags: algorithm
 author: NoPerfectName
 excerpt: 《具体数学》给出的经验总结
