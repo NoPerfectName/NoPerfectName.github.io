@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 来自《编程珠玑》的一些定律和法则
-categories: Algorithm
-tags: Algorithm
+categories: algorithm
+tags: algorithm
 author: NoPerfectName
 excerpt: 法则
 ---
