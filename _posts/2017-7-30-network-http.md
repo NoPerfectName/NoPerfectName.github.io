@@ -10,7 +10,7 @@ excerpt: 简单介绍Http协议的组成部分
 * content
 {:toc}
 
-#### 一个HTTP请求包括以下三个部分
+#### HTTP Request
 （1）Method—Uniform Resource Identifier (URI)—Protocol/Version  
 （2）Request headers  
 （3）Entity body  
@@ -37,7 +37,7 @@ lastName=Franks&firstName=Michael
 
 
 
-#### 与 HTTP Request 类似，HTTP Response 也由三部分组成
+#### HTTP Response 
 (1)Protocol—Status code—Description  
 (2)Response headers  
 (3)Entity body  
