@@ -25,6 +25,9 @@ type: page
 
 * [Java 7中的Try-with-resources](http://ifeve.com/java-7%E4%B8%AD%E7%9A%84try-with-resources/)
 * [Java类加载（详细）](http://www.importnew.com/23742.html)
+* [Java NIO入门](http://www.majunwei.com/view/201611061912439367.html)
+* [Java 时间API](http://www.importnew.com/14140.html)
+* [Java ReentrantLock Condition](http://outofmemory.cn/java/java.util.concurrent/lock-reentrantlock-condition)
     
 ## 设计模式
 * [设计模式Java版](https://gof.quanke.name/)
@@ -49,3 +52,7 @@ type: page
 ## Python
 
 * [Python多继承初始化](http://www.jackyshen.com/2015/08/19/multi-inheritance-with-super-in-Python/)
+
+## Linux
+
+* [常用命令](http://blog.csdn.net/wojiaopanpan/article/details/7286430)
