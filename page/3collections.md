@@ -51,6 +51,7 @@ type: page
 
 ## Python
 
+* [系统学习Python](http://nbviewer.jupyter.org/github/lijin-THU/notes-python/blob/master/index.ipynb)
 * [Python多继承初始化](http://www.jackyshen.com/2015/08/19/multi-inheritance-with-super-in-Python/)
 
 ## Linux
