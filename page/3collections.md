@@ -40,6 +40,7 @@ type: page
 * [理解矩阵二](http://blog.csdn.net/myan/article/details/649018)
 * [理解矩阵三](http://blog.csdn.net/myan/article/details/1865397)
 * [LaTex公式简介](http://mlworks.cn/posts/introduction-to-mathjax-and-latex-expression/)
+* [PCA的数学原理](http://blog.codinglabs.org/articles/pca-tutorial.html)
 
 
 ## 机器学习
