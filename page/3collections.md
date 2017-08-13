@@ -28,10 +28,11 @@ type: page
 * [Java NIO入门](http://www.majunwei.com/view/201611061912439367.html)
 * [Java 时间API](http://www.importnew.com/14140.html)
 * [Java ReentrantLock Condition](http://outofmemory.cn/java/java.util.concurrent/lock-reentrantlock-condition)
-    
+
+    
 ## 设计模式
 * [设计模式Java版](https://gof.quanke.name/)
-
+* [装饰模式和代理模式的区别](http://www.cnblogs.com/jaredlam/archive/2011/11/08/2241089.html)
 
 ## 数学
 
