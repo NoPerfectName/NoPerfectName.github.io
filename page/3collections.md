@@ -29,6 +29,7 @@ type: page
 * [Java 时间API](http://www.importnew.com/14140.html)
 * [Java ReentrantLock Condition](http://outofmemory.cn/java/java.util.concurrent/lock-reentrantlock-condition)
 * [forward和redirect的区别](http://www.cnblogs.com/selene/p/4518246.html)
+* [HashMap 实现原理和扩容详解](http://yikun.github.io/2015/04/01/Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/)
 
     
 ## 设计模式
