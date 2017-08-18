@@ -14,11 +14,13 @@ excerpt: 对ReentrantLock的用法进行介绍
 ### 与synchronized的优势
 （1）性能  
 重入锁完全可以替代synchronized关键字。在JDK5.0之前，重入锁的性能远远好于synchronized，但从JDK6.0开始，JDK在synchronized上做了大量的优化，使得两者的性能差距并不大。  
-</br>
+
+
 
 （2）中断响应  
 对于synchronized来说，如果一个线程在等待锁，那么结果只有两种情况，要么它获得这把锁继续执行，要么它保持等待。而使用重入锁，则提供了另一种可能，那就是线程可以被中断。也就是在等待锁的过程中，程序可以根据需要取消对锁的请求。  
 > public void lockInterruptibly()  throws InterruptedException
+
 ```java
 public class IntLock implements Runnable{
     public static ReentrantLock lock1 = new ReentrantLock();
@@ -91,16 +93,21 @@ lock1 continue
 10线程退出
 
 ```
+
 使用lockInterruptibly()方法可以解决中断线程，从而解决死锁问题。  
-</br>
+
+
+
 锁申请等待限时也可以解决死锁问题。  
 > public boolean tryLock()
  public boolean tryLock(long timeout, TimeUnit unit) throws InterruptedException
 
-</br>
+
+
 ### Condition 条件
 如果理解了Object.wait()和Object.notify()，那么就能很容易理解Condition对象了，它的作用大致与wait()和notify()相同。但是wait()和notify()方法是和synchronized关键字合作使用的，而Condition是与重入锁相关联的。  
-Condition接口提供的基本方法如下：
+Condition接口提供的基本方法如下：  
+
 ```java
 void await() throws InterruptedException
 void awaitUninterruptibly()
@@ -109,6 +116,7 @@ boolean await(long time, TImeUnit unit) throws InterruptedException
 void signal()
 void signalAll()
 ```
+
 简单演示COndition的功能 
 ```java
 public class ReenterLockCondition implements Runnable {
