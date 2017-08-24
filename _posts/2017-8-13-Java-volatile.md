@@ -11,8 +11,9 @@ excerpt: volatile修饰对象
 {:toc}
 
 
-volatile只能保证可见性，不能保证原子性，所以只能在状态独立于程序内其他内容才能使用。  
+volatile能保证顺序性（happens-before）和可见性，不能保证原子性（但是能保证long、double读写的原子性），所以只能在状态独立于程序内其他内容才能使用。
 如果使用volatile修饰类成员对象时，当类中的属性发生变化时，也可以使其他线程可见。
+如果使用volatile修饰数组，只能保证volatile数组引用的可见性，数组元素的变化并不能保证被其他线程看到。
 ```java
 public class VolatileObjectTest implements Runnable {
     private /*volatile*/ ObjectA a; // 加上volatile 就可以正常结束While循环了
