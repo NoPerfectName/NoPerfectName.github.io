@@ -2,7 +2,7 @@
 layout: post
 title: Java volatile
 categories: Java
-tags: JVM
+tags: Java
 author: NoPerfectName
 excerpt: volatile修饰对象
 ---
