@@ -74,3 +74,22 @@ B static
 A static
 ```
  
+ ### Class泛型
+```java
+class A {
+
+}
+
+class B extends A {
+
+}
+
+public class TestReflect {
+	public static void main(String[] args) throws Exception{
+		Class<? extends A> c = B.class;
+		System.out.println(c.getName());  //输出B
+		//由于泛型是编译时检查，编译器认为右边表达式的类型为A，所以必须显式转换，否则会报错
+		B b = (B)c.newInstance();		
+	}
+}
+```
