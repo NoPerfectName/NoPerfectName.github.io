@@ -61,3 +61,8 @@ type: page
 ## Linux
 
 * [常用命令](http://blog.csdn.net/wojiaopanpan/article/details/7286430)
+
+## 树莓派
+
+* [网线连接树莓派和电脑](https://www.jianshu.com/p/505fc3f957aa)
+* [命令行修改wifi密码](http://www.shumeipaiba.com/wanpai/jiaocheng/25.html)
