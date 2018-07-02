@@ -51,6 +51,7 @@ type: page
 * [机器学习算法分类](http://blog.jobbole.com/77620/)
 * [A Tour of Machine Learning Algorithms](http://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/)
 * [线性代数介绍](http://www.hahack.com/wiki/math-linear-algebra.html)
+* [Python为什么慢](https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/)
 
 
 ## Python
