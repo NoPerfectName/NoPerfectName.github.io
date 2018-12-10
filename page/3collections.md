@@ -53,6 +53,9 @@ type: page
 * [A Tour of Machine Learning Algorithms](http://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/)
 * [线性代数介绍](http://www.hahack.com/wiki/math-linear-algebra.html)
 * [Python为什么慢](https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/)
+* [DeepMind深度学习高级教程](https://www.youtube.com/playlist?list=PLqYmG7hTraZDNJre23vqCGIVpfZ_K2RZs)
+* [吴恩达CS230深度学习小抄](https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247508973&idx=6&sn=45034ea0d912e754fb82d60d20dfffc8&chksm=e8d0149fdfa79d89475713c2eefaff3de84f1288383b80c1fedf699de8836de0b23c5b2878da&mpshare=1&scene=1&srcid=1202xsXuguZyDlHA6dtU17yl#rd)
+
 
 
 ## Python
