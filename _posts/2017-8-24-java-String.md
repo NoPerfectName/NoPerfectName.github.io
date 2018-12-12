@@ -2,7 +2,7 @@
 layout: post
 title: Java String
 categories: Java
-tags: java
+tags: Java
 author: NoPerfectName
 excerpt: 关于String的一些例子
 ---
